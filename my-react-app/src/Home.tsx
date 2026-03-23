@@ -4,6 +4,7 @@ import Orb from "@/components/Orb"
 import "@/components/orb.css"
 import FuzzyText from "./components/FuzzyText"
 import 'react-magic-ui/dist/react-magic-ui.css'
+import { GlassButton } from "react-glass-ui"
 
 function Home() {
     const nav = useNavigate();
@@ -74,6 +75,13 @@ return (
                 hoverIntensity={0.5}
                 enableHover
                 fontSize={'clamp(1rem, 1vw, 1rem)'}>Click to Enter</FuzzyText></button>
+              {/* <GlassButton className="glass-card"
+                width={100}
+                height={50}
+                blur={5}
+                distortion={50}>
+                    <h1>Enter</h1>
+                </GlassButton> */}
           </div>
         </div>
       </div>

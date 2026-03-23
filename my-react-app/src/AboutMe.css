@@ -9,3 +9,259 @@ body,
   overflow-x: hidden;
   overflow-y: auto;
 }
+
+.demo_card {
+  z-index: 5;
+}
+.demo-glass-card {
+  min-height: 366px;
+}
+.profile-card {
+  z-index: 5;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.profile-image-container {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 50px;
+  border: 3px solid white;
+  background-color: white;
+}
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.profile-name {
+  word-break: break-word;
+  font-size: 50px;
+  margin: 0;
+}
+.profile-role {
+  word-break: break-word;
+  font-size: 22px;
+  padding-top: 12px;
+  opacity: 0.7;
+  margin-bottom: 0px;
+}
+.profile-actions {
+  display: flex;
+  justify-content: center;
+}
+.profile-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background: transparent;
+  color: black;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border: 1px solid white;
+  margin-right: 10px;
+}
+.profile-button.primary {
+  background: white;
+  color: black;
+}
+.profile-button:hover {
+  background: linear-gradient(90deg, #b388ff, #ff80bf);
+  color: white;
+}
+
+.profile-section {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: "48px 16px";
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.description-section {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: "48px 16px";
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.enjoy-section {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: "48px 16px";
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.concerts-section {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: "48px 16px";
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.jinx-section {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: "48px 16px";
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.pronunciation {
+  word-break: break-word;
+  font-size: 30px;
+  padding-top: 15px;
+  margin: 0;
+}
+
+.variable-proximity {
+  font-family: 'Roboto Flex', sans-serif;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.tiled-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.tilted-cards-container {
+  display: flex;
+  padding-top: 35px;
+  flex-direction: row;
+  flex-wrap: wrap;        /* wrap to next line on small screens */
+  gap: 24px;              /* spacing between cards */
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ensure each TiltedCard keeps its intrinsic size */
+.tilted-cards-container > * {
+  flex: 0 0 auto;
+}
+
+/* stack vertically on narrow viewports */
+@media (max-width: 640px) {
+  .tilted-cards-container {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+.nav-buttons {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 16px;
+  display: flex;
+  justify-content: center; /* center the nav horizontally in the section */
+  align-items: center;
+  z-index: 2;
+}
+
+/* make the <nav> hold the GlassCard components in a row */
+.nav-buttons nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;       /* spacing between the three cards */
+  flex-wrap: wrap; /* wrap on narrow screens */
+}
+
+/* ensure each GlassCard keeps its size and doesn't stretch */
+.nav-buttons nav > * {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  transition: filter 180ms ease, transform 180ms ease;
+  will-change: filter, transform;
+}
+
+/* if the GlassCard wraps children inside extra divs, center those too */
+.nav-buttons nav > * > div,
+.nav-buttons nav > * > div > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+.nav-buttons nav button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+/* dim the GlassCard when the button is hovered or focused */
+.nav-buttons nav button:hover > *,
+.nav-buttons nav button:focus-visible > * {
+  filter: brightness(0.75);
+}
+
+/* stronger effect when pressed */
+.nav-buttons nav button:active > * {
+  filter: brightness(0.6);
+}
+
+/* small accessible focus ring */
+.nav-buttons nav button:focus-visible {
+  outline: 2px solid rgba(255,255,255,0.12);
+  outline-offset: 4px;
+}
+
+/* optional: stack vertically on very small screens */
+@media (max-width: 480px) {
+  .nav-buttons nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+

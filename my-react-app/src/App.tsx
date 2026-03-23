@@ -8,6 +8,7 @@ import Orb from "@/components/Orb"
 import "@/components/orb.css"
 import FuzzyText from "./components/FuzzyText"
 import 'react-magic-ui/dist/react-magic-ui.css'
+import Test from "./Test"
 
 function App() {
 return (
