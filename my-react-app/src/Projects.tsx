@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import SplitText from "./components/SplitText";
 import VariableProximity from "./components/VariableProximity";
 import LogoLoop from "./components/LogoLoop";
-import { SiReact, SiTypescript, SiCplusplus, SiJavascript, SiPython} from 'react-icons/si';
+import { SiReact, SiTypescript, SiCplusplus, SiJavascript, SiPython, SiAngular, SiIonic} from 'react-icons/si';
 import { FaJava, FaHtml5, FaCss3Alt } from 'react-icons/fa';
 import Carousel from "./components/Carousel";
  
@@ -18,7 +18,9 @@ const techLogos = [
   { node: <SiCplusplus />, title: "C++", href: "https://isocpp.org" },
   { node: <SiTypescript />, title: "TypeScript", href: "https://www.typescriptlang.org" },
   { node: <FaJava />, title: "Java", href: "https://www.java.com" },
-  { node: <FaCss3Alt />, title: "CSS", href: "https://developer.mozilla.org/en-US/docs/Web/CSS" },  
+  { node: <FaCss3Alt />, title: "CSS", href: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
+  { node: <SiAngular />, title: "Angular", href: "https://angular.io" },
+  { node: <SiIonic />, title: "Ionic", href: "https://ionicframework.com" },  
 ];
 
 function Projects() {
@@ -247,7 +249,7 @@ function Projects() {
         </GlassCard>
       </section>
 
-      <div style={{fontSize: '30px', fontWeight: 'bold', paddingTop: '20px'}}>Languages I Know</div>
+      <div style={{fontSize: '30px', fontWeight: 'bold', paddingTop: '20px'}}>Languages/Frameworks I Know</div>
       <section className="logos-section">
         <div style={{ height: '200px', position: 'relative', overflow: 'hidden', paddingTop: '25px'}}>
           {/* <div className="langs-text">Languages That I Know</div> */}

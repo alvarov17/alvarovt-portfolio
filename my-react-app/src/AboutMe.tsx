@@ -7,10 +7,15 @@ import CircularGallery from "./components/CircularGallery";
 import TiltedCard from "./components/TiltedCard";
 import PixelTransition from "./components/PixelTransition";
 import { useNavigate } from "react-router-dom";
+import SplitText from "./components/SplitText";
 
 function AboutMe() {
   const nav = useNavigate();
   const containerRef = useRef<HTMLDivElement>(null);
+
+  const handleAnimationComplete = () => {
+    console.log('All letters have animated!');
+  };
 
   const navProjects = () => {
     nav("/projects", { viewTransition: true});
@@ -169,6 +174,22 @@ function AboutMe() {
           />
         </div>
       </div>
+
+      <section className="header-section">
+        <SplitText
+          text="Welcome to my Portfolio!"
+          className="text-5xl font-semibold text-center"
+          delay={50}
+          duration={1.25}
+          ease="power3.out"
+          splitType="chars"
+          from={{ opacity: 0, y: 40 }}
+          to={{ opacity: 1, y: 0 }}
+          threshold={0.1}
+          rootMargin="-100px"
+          textAlign="center"
+          onLetterAnimationComplete={handleAnimationComplete}/>
+      </section>
 
       <section className="profile-section">
         <GlassCard
@@ -340,11 +361,7 @@ function AboutMe() {
                 scaleOnHover={1.15}
                 showMobileWarning={false}
                 showTooltip
-                displayOverlayContent
-                overlayContent={
-                  <p className="pill-box">
-                    Loathe
-                  </p>}/>
+                displayOverlayContent/>
 
               <TiltedCard
                 imageSrc="./images/joji.png"
@@ -358,11 +375,7 @@ function AboutMe() {
                 scaleOnHover={1.15}
                 showMobileWarning={false}
                 showTooltip
-                displayOverlayContent
-                overlayContent={
-                  <p className="pill-box">
-                    Joji
-                  </p>}/>
+                displayOverlayContent/>
 
               <TiltedCard
                 imageSrc="./images/whirr.jpeg"
@@ -376,11 +389,7 @@ function AboutMe() {
                 scaleOnHover={1.15}
                 showMobileWarning={false}
                 showTooltip
-                displayOverlayContent
-                overlayContent={
-                  <p className="pill-box">
-                    Whirr
-                  </p>}/>
+                displayOverlayContent/>
             </div>
           </div>
         </GlassCard>

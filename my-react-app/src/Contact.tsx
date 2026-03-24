@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import SplitText from "./components/SplitText";
 import 'react-magic-ui/dist/react-magic-ui.css'
 import { Input } from "react-magic-ui";
+import { useState } from "react";
 
 function Contact() {
 
@@ -24,6 +25,18 @@ function Contact() {
 
     const handleAnimationComplete = () => {
       console.log('All letters have animated!');
+    };
+
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
+
+    const handleSubmit = () => {
+      console.log({ name, email, message });
+      // clear input fields after submit
+      setName("");
+      setEmail("");
+      setMessage("");
     };
 
   return (
@@ -214,21 +227,34 @@ function Contact() {
           <div className="profile-card">
             <div style={{paddingTop: '10px'}}>
               <p>Name</p>
-              <Input placeholder="Your Name" width={300} />
+              <Input
+                placeholder="Your Name"
+                width={300}
+                value={name}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)}
+              />
             </div>
             <div style={{paddingTop: '10px'}}>
               <p>Email</p>
-              <Input placeholder="joe@email.com" width={300}/>
+              <Input
+                placeholder="joe@email.com"
+                width={300}
+                value={email}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
+              />
             </div>
             <div style={{paddingTop: '10px'}}>
               <p>Message</p> 
               <textarea
                 className="large-textarea"
                 placeholder="Your message..."
-                aria-label="Message"/>
+                aria-label="Message"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+              />
             </div>
             <div style={{paddingTop: '40px'}}>
-              <button onClick={() => console.log('Submit button clicked')}>
+              <button onClick={handleSubmit}>
                 <GlassCard
                   blur={1}
                   width={100}
