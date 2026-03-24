@@ -2,13 +2,14 @@ import { GlassCard } from "react-glass-ui";
 import Prism from "./components/Prism";
 import "./Projects.css";
 import { useRef } from "react";
-import { href, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import SplitText from "./components/SplitText";
 import VariableProximity from "./components/VariableProximity";
 import LogoLoop from "./components/LogoLoop";
 import { SiReact, SiTypescript, SiCplusplus, SiJavascript, SiPython} from 'react-icons/si';
 import { FaJava, FaHtml5, FaCss3Alt } from 'react-icons/fa';
 import CardSwap, { Card } from "./components/CardSwap";
+import Carousel from "./components/Carousel";
  
 const techLogos = [
   { node: <SiPython />, title: "Python", href: "https://www.python.org" },
@@ -247,9 +248,10 @@ function Projects() {
         </GlassCard>
       </section>
 
+      <div style={{fontSize: '30px', fontWeight: 'bold', paddingTop: '20px'}}>Languages I Know</div>
       <section className="logos-section">
         <div style={{ height: '200px', position: 'relative', overflow: 'hidden', paddingTop: '25px'}}>
-          <div className="langs-text">Languages That I Know</div>
+          {/* <div className="langs-text">Languages That I Know</div> */}
           {/* Basic horizontal loop */}
           <LogoLoop
             logos={techLogos}
@@ -262,6 +264,23 @@ function Projects() {
             ariaLabel="Technology partners"/>
         </div>
       </section>
+
+      <div style={{fontSize: '30px', fontWeight: 'bold', paddingTop: '20px'}}>Some Projects</div>
+      <div style={{ 
+        height: '600px', 
+        position: 'relative', 
+        display: 'flex',            
+        justifyContent: 'center',   
+        alignItems: 'center',       
+        width: '100%'}}>
+        <Carousel
+          baseWidth={1000}
+          autoplay={true}
+          autoplayDelay={3000}
+          pauseOnHover={true}
+          loop={true}
+          round={false}/>
+      </div>
 
       <section className="links-section">
         <GlassCard
@@ -387,10 +406,7 @@ function Projects() {
         </GlassCard>
       </section>
 
-      <div style={{justifyContent: "center", fontSize: "45px", paddingTop: "15px"}}>Some Projects</div>
-      <section>
-        
-      </section>
+
     </div>
   );
 }
