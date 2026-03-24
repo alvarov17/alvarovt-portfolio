@@ -11,7 +11,7 @@ export default defineConfig({
     babel({ presets: [reactCompilerPreset()] }),
     tailwindcss(),
   ],
-  base: "/alvarovt-portfolio",
+  base: "/alvarovt-portfolio/",
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
