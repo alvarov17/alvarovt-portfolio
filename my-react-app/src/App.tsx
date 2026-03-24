@@ -4,7 +4,6 @@ import AboutMe from "./AboutMe"
 import Projects from "./Projects"
 import Contact from "./Contact"
 import {BrowserRouter, Routes, Route} from "react-router-dom"
-import Orb from "@/components/Orb"
 import "@/components/orb.css"
 
 function App() {

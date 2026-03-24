@@ -4,7 +4,6 @@ import Orb from "@/components/Orb"
 import "@/components/orb.css"
 import FuzzyText from "./components/FuzzyText"
 import 'react-magic-ui/dist/react-magic-ui.css'
-import { GlassButton } from "react-glass-ui"
 
 function Home() {
     const nav = useNavigate();
