@@ -198,7 +198,6 @@ function AboutMe() {
             saturation={100}
             brightness={100}>
           <div className="profile-card">
-            {/* <div> */}
               <div className="profile-image-container">
                 <img className="profile-image" src={"./public/images/portfolio_alv.jpeg"} />
               </div>
@@ -206,8 +205,6 @@ function AboutMe() {
                 <div className="profile-name">Alvaro Ventura</div>
                 <div className="profile-role">Software Engineering Student @ UCI</div>
               </div>
-            {/* </div> */}
-
           </div>
         </GlassCard>
       </section>

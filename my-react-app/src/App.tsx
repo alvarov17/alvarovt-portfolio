@@ -6,8 +6,6 @@ import Contact from "./Contact"
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import Orb from "@/components/Orb"
 import "@/components/orb.css"
-import FuzzyText from "./components/FuzzyText"
-import 'react-magic-ui/dist/react-magic-ui.css'
 import Test from "./Test"
 
 function App() {
