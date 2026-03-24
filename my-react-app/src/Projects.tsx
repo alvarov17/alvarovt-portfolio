@@ -8,7 +8,6 @@ import VariableProximity from "./components/VariableProximity";
 import LogoLoop from "./components/LogoLoop";
 import { SiReact, SiTypescript, SiCplusplus, SiJavascript, SiPython} from 'react-icons/si';
 import { FaJava, FaHtml5, FaCss3Alt } from 'react-icons/fa';
-import CardSwap, { Card } from "./components/CardSwap";
 import Carousel from "./components/Carousel";
  
 const techLogos = [

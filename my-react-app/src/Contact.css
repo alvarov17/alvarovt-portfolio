@@ -10,6 +10,12 @@ body,
   overflow-y: auto;
 }
 
+.demo_card {
+  z-index: 5;
+}
+.demo-glass-card {
+  min-height: 366px;
+}
 .profile-card {
   z-index: 5;
   padding: 5px;
@@ -89,9 +95,7 @@ body,
   display: block;
 }
 
-
-
-.enjoy-section {
+.description-section {
   padding-top: 15px;
   padding-bottom: 15px;
   display: flex;
@@ -103,6 +107,88 @@ body,
   z-index: 1;
 }
 
+.contact-section {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: "48px 16px";
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.concerts-section {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: "48px 16px";
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.jinx-section {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: "48px 16px";
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.pronunciation {
+  word-break: break-word;
+  font-size: 30px;
+  padding-top: 15px;
+  margin: 0;
+}
+
+.variable-proximity {
+  font-family: 'Roboto Flex', sans-serif;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.tiled-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.tilted-cards-container {
+  display: flex;
+  padding-top: 35px;
+  flex-direction: row;
+  flex-wrap: wrap;        /* wrap to next line on small screens */
+  gap: 24px;              /* spacing between cards */
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ensure each TiltedCard keeps its intrinsic size */
+.tilted-cards-container > * {
+  flex: 0 0 auto;
+}
 
 /* stack vertically on narrow viewports */
 @media (max-width: 640px) {
@@ -188,3 +274,37 @@ body,
   }
 }
 
+.quote-section {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: "48px 16px";
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.large-textarea {
+  width: 800px;
+  height: 250px;
+  box-sizing: border-box;
+  padding: 12px;
+  font-size: 16px;
+  color: #fff;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px;
+
+  /* prevent manual resize (removes the corner handle) */
+  resize: none;
+  overflow: auto;
+
+  outline: none;
+  caret-color: #fff;
+
+  text-align: left;
+  direction: ltr;
+  align-self: flex-start;
+}
