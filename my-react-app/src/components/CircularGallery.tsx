@@ -479,35 +479,35 @@ class App {
   ) {
     const defaultItems = [
       {
-        image: `https://picsum.photos/seed/1/800/600?grayscale`,
+        image: '/images/loathe.jpeg',
         text: 'Music'
       },
       {
-        image: `https://picsum.photos/seed/2/800/600?grayscale`,
+        image: '/images/thrift.jpeg',
         text: 'Thrifting'
       },
       {
-        image: `https://picsum.photos/seed/3/800/600?grayscale`,
+        image: '/images/friends.jpeg',
         text: 'Going Out with Friends'
       },
       {
-        image: `https://picsum.photos/seed/4/800/600?grayscale`,
+        image: '/images/cd.jpeg',
         text: 'CDs & Vinyls'
       },
       {
-        image: `https://picsum.photos/seed/5/800/600?grayscale`,
+        image: '/images/sudoku.jpg',
         text: 'Sudoku'
       },
       {
-        image: `https://picsum.photos/seed/16/800/600?grayscale`,
+        image: '/images/napping.jpg',
         text: 'Napping'
       },
       {
-        image: `https://picsum.photos/seed/17/800/600?grayscale`,
+        image: '/images/kitty.jpeg',
         text: 'Cats'
       },
       {
-        image: `https://picsum.photos/seed/8/800/600?grayscale`,
+        image: '/images/hack.jpg',
         text: 'Technology'
       },
     ];

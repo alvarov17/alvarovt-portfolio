@@ -6,7 +6,6 @@ import Contact from "./Contact"
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import Orb from "@/components/Orb"
 import "@/components/orb.css"
-import Test from "./Test"
 
 function App() {
 return (

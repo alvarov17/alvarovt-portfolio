@@ -5,9 +5,42 @@ import { useNavigate } from "react-router-dom";
 import SplitText from "./components/SplitText";
 import 'react-magic-ui/dist/react-magic-ui.css'
 import { Input } from "react-magic-ui";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import emailjs from '@emailjs/browser';
+
 
 function Contact() {
+
+    const form = useRef<HTMLFormElement>(null);
+
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
+  
+    const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+  
+      if (!form.current) return;
+  
+      emailjs
+        .sendForm(
+          "service_88xqnsg",
+          "template_1vy7r0y",
+          form.current,
+          "LJQ6gziAAyOPWoH9l"
+        )
+        .then(
+          () => {
+            alert("Sent Successfully!");
+            setName("");
+            setEmail("");
+            setMessage("");
+          },
+          () => {
+            alert("An error occurred, please try again.");
+          }
+        );
+    };
 
     const nav = useNavigate();
   
@@ -27,17 +60,11 @@ function Contact() {
       console.log('All letters have animated!');
     };
 
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [message, setMessage] = useState("");
+    // const [name, setName] = useState("");
+    // const [email, setEmail] = useState("");
+    // const [message, setMessage] = useState("");
 
-    const handleSubmit = () => {
-      console.log({ name, email, message });
-      // clear input fields after submit
-      setName("");
-      setEmail("");
-      setMessage("");
-    };
+
 
   return (
     <div
@@ -197,7 +224,7 @@ function Contact() {
           onLetterAnimationComplete={handleAnimationComplete}/>
       </section>
 
-      <section className="contact-section">
+      {/* <section className="contact-section">
         <GlassCard
           blur={4}
           width={1000}
@@ -289,7 +316,91 @@ function Contact() {
             </div>
           </div>
         </GlassCard>
-      </section>
+      </section> */}
+
+<section className="contact-section">
+      <GlassCard
+        blur={4}
+        width={1000}
+        height={600}
+        padding="20px"
+        distortion={80}
+        flexibility={2}
+        borderColor="#ffffff"
+        borderSize={1}
+        borderRadius={150}
+        borderOpacity={0.4}
+        backgroundColor="#000000ff"
+        backgroundOpacity={0.1}
+        innerLightColor="#ffffff"
+        innerLightSpread={1}
+        innerLightBlur={10}
+        innerLightOpacity={0}
+        outerLightColor="#ffffff"
+        outerLightSpread={1}
+        outerLightBlur={10}
+        outerLightOpacity={0}
+        color="#ffffff"
+      >
+        <form ref={form} onSubmit={sendEmail} className="profile-card">
+          
+          <div style={{ paddingTop: "10px" }}>
+            <p>Name</p>
+            <Input
+              name="name" 
+              placeholder="Your Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+          </div>
+
+          <div style={{ paddingTop: "10px" }}>
+            <p>Email</p>
+            <Input
+              name="email" 
+              placeholder="joe@email.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+
+          <div style={{ paddingTop: "10px" }}>
+            <p>Message</p>
+            <textarea
+              name="message" 
+              className="large-textarea"
+              placeholder="Your message..."
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+            />
+          </div>
+
+          <div style={{ paddingTop: "40px" }}>
+            <button type="submit">
+              <GlassCard
+                blur={1}
+                width={100}
+                height={50}
+                padding="12px"
+                distortion={80}
+                flexibility={8}
+                borderColor="#ffffff"
+                borderSize={1}
+                borderRadius={150}
+                borderOpacity={0.4}
+                backgroundColor="#000000ff"
+                backgroundOpacity={0.4}
+                color="#ffffff"
+              >
+                <div>Submit</div>
+              </GlassCard>
+            </button>
+          </div>
+
+        </form>
+        {/* FORM END */}
+      </GlassCard>
+    </section>
 
       <div style={{fontSize: '30px', fontWeight: 'bold'}}>"To give anything less than your best is to sacrifice the gift." -Steve Prefontaine</div>
     </div>
