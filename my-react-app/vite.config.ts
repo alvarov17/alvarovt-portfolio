@@ -4,7 +4,6 @@ import babel from '@rolldown/plugin-babel'
 import tailwindcss from '@tailwindcss/vite'
 import path from 'path' // ✅ ADD THIS
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [
     react(),
