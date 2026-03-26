@@ -60,12 +60,6 @@ function Contact() {
       console.log('All letters have animated!');
     };
 
-    // const [name, setName] = useState("");
-    // const [email, setEmail] = useState("");
-    // const [message, setMessage] = useState("");
-
-
-
   return (
     <div
       style={{
@@ -218,108 +212,14 @@ function Contact() {
           onLetterAnimationComplete={handleAnimationComplete}/>
       </section>
 
-      {/* <section className="contact-section">
-        <GlassCard
-          blur={4}
-          width={1000}
-          height={600}
-          padding="20px"
-          distortion={80}
-          flexibility={2}
-          borderColor="#ffffff"
-          borderSize={1}
-          borderRadius={150}
-          borderOpacity={0.4}
-          backgroundColor="#000000ff"
-          backgroundOpacity={0.1}
-          innerLightColor="#ffffff"
-          innerLightSpread={1}
-          innerLightBlur={10}
-          innerLightOpacity={0}
-          outerLightColor="#ffffff"
-          outerLightSpread={1}
-          outerLightBlur={10}
-          outerLightOpacity={0}
-          color="#ffffff"
-          chromaticAberration={0}
-          onHoverScale={1}
-          saturation={100}
-          brightness={100}>
-          <div className="profile-card">
-            <div style={{paddingTop: '10px'}}>
-              <p>Name</p>
-              <Input
-                placeholder="Your Name"
-                width={300}
-                value={name}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)}
-              />
-            </div>
-            <div style={{paddingTop: '10px'}}>
-              <p>Email</p>
-              <Input
-                placeholder="joe@email.com"
-                width={300}
-                value={email}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
-              />
-            </div>
-            <div style={{paddingTop: '10px'}}>
-              <p>Message</p> 
-              <textarea
-                className="large-textarea"
-                placeholder="Your message..."
-                aria-label="Message"
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-              />
-            </div>
-            <div style={{paddingTop: '40px'}}>
-              <button onClick={handleSubmit}>
-                <GlassCard
-                  blur={1}
-                  width={100}
-                  height={50}
-                  padding="12px"
-                  distortion={80}
-                  flexibility={8}
-                  borderColor="#ffffff"
-                  borderSize={1}
-                  borderRadius={150}
-                  borderOpacity={0.4}
-                  backgroundColor="#000000ff"
-                  backgroundOpacity={0.4}
-                  innerLightColor="#ffffff"
-                  innerLightSpread={1}
-                  innerLightBlur={10}
-                  innerLightOpacity={0}
-                  outerLightColor="#ffffff"
-                  outerLightSpread={1}
-                  outerLightBlur={10}
-                  outerLightOpacity={0}
-                  color="#ffffff"
-                  chromaticAberration={0}
-                  onHoverScale={1}
-                  saturation={100}
-                  brightness={100}>
-                  <div>
-                    <div>Submit</div>
-                  </div>
-                </GlassCard>
-              </button>
-            </div>
-          </div>
-        </GlassCard>
-      </section> */}
-
-<section className="contact-section">
+     <section className="contact-section">
       <GlassCard
         blur={4}
         width={1000}
-        height={600}
+        height={575}
         padding="20px"
         distortion={80}
-        flexibility={2}
+        flexibility={3.5}
         borderColor="#ffffff"
         borderSize={1}
         borderRadius={150}
@@ -334,11 +234,9 @@ function Contact() {
         outerLightSpread={1}
         outerLightBlur={10}
         outerLightOpacity={0}
-        color="#ffffff"
-      >
+        color="#ffffff">
         <form ref={form} onSubmit={sendEmail} className="profile-card">
-          
-          <div style={{ paddingTop: "10px" }}>
+          <div style={{}}>
             <p>Name</p>
             <Input
               name="name" 
@@ -369,12 +267,12 @@ function Contact() {
             />
           </div>
 
-          <div style={{ paddingTop: "40px" }}>
+          <div style={{ paddingTop: "30px" }}>
             <button type="submit">
               <GlassCard
                 blur={1}
                 width={100}
-                height={50}
+                height={45}
                 padding="12px"
                 distortion={80}
                 flexibility={8}
@@ -384,19 +282,17 @@ function Contact() {
                 borderOpacity={0.4}
                 backgroundColor="#000000ff"
                 backgroundOpacity={0.4}
-                color="#ffffff"
-              >
-                <div>Submit</div>
+                color="#ffffff">
+                <div className="button-text">Submit</div>
               </GlassCard>
             </button>
           </div>
-
         </form>
         {/* FORM END */}
       </GlassCard>
-    </section>
+     </section>
 
-      <div style={{fontSize: '30px', fontWeight: 'bold'}}>"To give anything less than your best is to sacrifice the gift." -Steve Prefontaine</div>
+      <div style={{fontSize: '30px', fontWeight: 'bold', marginBottom: '20px'}}>"To give anything less than your best is to sacrifice the gift." -Steve Prefontaine</div>
     </div>
   );
 }

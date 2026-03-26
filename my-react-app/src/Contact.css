@@ -11,7 +11,7 @@ body,
 }
 .profile-card {
   z-index: 5;
-  padding: 5px;
+  /* padding: 5px; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -171,7 +171,8 @@ body,
 }
 
 .large-textarea {
-  width: 800px;
+  width: 500px;              /* fill the parent's width */
+  max-width: 900px;         /* cap so it doesn't get too wide on large screens */
   height: 250px;
   box-sizing: border-box;
   padding: 12px;
@@ -190,5 +191,16 @@ body,
 
   text-align: left;
   direction: ltr;
-  align-self: flex-start;
+
+  /* center in flex containers and allow stretching when needed */
+  align-self: center;
+  min-width: 200px;
+}
+
+@media (max-width: 480px) {
+  .large-textarea {
+    width: calc(100% - 32px); /* leave some page padding */
+    max-width: none;
+    align-self: stretch;
+  }
 }
