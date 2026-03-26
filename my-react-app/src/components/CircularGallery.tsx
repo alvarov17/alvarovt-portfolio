@@ -479,35 +479,35 @@ class App {
   ) {
     const defaultItems = [
       {
-        image: '/images/loathe.jpeg',
+        image: './images/loathe.jpeg',
         text: 'Music'
       },
       {
-        image: '/images/thrift.jpeg',
+        image: './images/thrift.jpeg',
         text: 'Thrifting'
       },
       {
-        image: '/images/friends.jpeg',
+        image: './images/friends.jpeg',
         text: 'Going Out with Friends'
       },
       {
-        image: '/images/cd.jpeg',
+        image: './images/cd.jpeg',
         text: 'CDs & Vinyls'
       },
       {
-        image: '/images/sudoku.jpg',
+        image: './images/sudoku.jpg',
         text: 'Sudoku'
       },
       {
-        image: '/images/napping.jpg',
+        image: './images/napping.jpg',
         text: 'Napping'
       },
       {
-        image: '/images/kitty.jpeg',
+        image: './images/kitty.jpeg',
         text: 'Cats'
       },
       {
-        image: '/images/hack.jpg',
+        image: './images/hack.jpg',
         text: 'Technology'
       },
     ];

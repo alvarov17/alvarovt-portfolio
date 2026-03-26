@@ -1,5 +1,5 @@
-import Prism from "./components/Prism";
 import "./Contact.css";
+import Prism from "./components/Prism";
 import { GlassCard } from "react-glass-ui";
 import { useNavigate } from "react-router-dom";
 import SplitText from "./components/SplitText";
@@ -105,9 +105,7 @@ function Contact() {
               onHoverScale={1}
               saturation={100}
               brightness={100}>
-            <div>
-              <div>About</div>
-            </div>
+              <div className="button-text">About</div>
           </GlassCard>
           </button>
           
@@ -138,9 +136,7 @@ function Contact() {
               onHoverScale={1}
               saturation={100}
               brightness={100}>
-              <div>
-                <div>Projects</div>
-              </div>
+                <div className="button-text">Projects</div>
             </GlassCard>
           </button>
 
@@ -171,9 +167,7 @@ function Contact() {
               onHoverScale={1}
               saturation={100}
               brightness={100}>
-              <div>
-                <div>Contact</div>
-              </div>
+                <div className="button-text">Contact</div>
             </GlassCard>
           </button>
         </nav>

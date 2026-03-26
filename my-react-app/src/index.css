@@ -5,18 +5,18 @@
 
 @custom-variant dark (&:is(.dark *));
 
-
+/* 
 @font-face {
   font-family: 'MyCustomFont';
-  src: url('/fonts/Audiowide.woff2') format('woff2'); /* leading slash */
+  src: url('/fonts/Audiowide.woff2') format('woff2'); 
   font-weight: normal;
   font-style: normal;
   font-display: swap;
-}
+} */
 
-.font-hero {
+/* .font-hero {
   font-family: 'MyCustomFont', system-ui, -apple-system, sans-serif;
-}
+} */
 
 :root {
   --text: #6b6375;
@@ -285,5 +285,5 @@ body,
 }
 
 body {
-  font-family: 'MyCustomFont', system-ui, -apple-system, sans-serif;
+  font-family: system-ui, -apple-system, sans-serif;
 }

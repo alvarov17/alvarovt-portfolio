@@ -29,35 +29,35 @@ const DEFAULT_ITEMS: CarouselItem[] = [
     description: 'Track sleepiness and alertness levels throughout the day. Built with: Ionic, Angular, HTML, and CSS.',
     id: 1,
     icon: <FiFileText className="carousel-icon" />,
-    imageSrc: '/images/sleeptracker.png' // replace with your own image if desired
+    imageSrc: './images/sleeptracker.png' // replace with your own image if desired
   },
   {
     title: 'Portfolio',
     description: 'My portfolio website showcasing my projects and skills. Built with: React, TypeScript, Framer Motion, React Bits, and CSS.',
     id: 2,
     icon: <FiCircle className="carousel-icon" />,
-    imageSrc: '/images/portfolio_web.png' // replace with your own image if desired
+    imageSrc: './images/portfolio_web.png' // replace with your own image if desired
   },
   {
     title: 'Spotify Browser',
     description: 'Browse Spotify user and Artist profiles showcasing stats and using Spotify endpoints to retrieve that information. Built with: Angular and Spotify API.',
     id: 3,
     icon: <FiLayers className="carousel-icon" />,
-    imageSrc: '/images/spotify_browser.png' // replace with your own image if desired
+    imageSrc: './images/spotify_browser.png' // replace with your own image if desired
   },
   {
     title: 'Search Engine',
     description: 'A search engine for a set of documents using an Inverted Index, TD-IDF weighting, duplicate/near duplicate page detection, Cosine Similarity, and Page Ranking. Provides fast and relevant search results under 300ms. Built with: Python and the tKinter library',
     id: 4,
     icon: <FiLayout className="carousel-icon" />,
-    imageSrc: '/images/search.png' // replace with your own image if desired
+    imageSrc: './images/search.png' // replace with your own image if desired
   },
   {
     title: 'Messaging Application',
     description: 'A simple messaging app that allows users to send messages to each other in real-time. Built with: Python and JSON.',
     id: 5,
     icon: <FiCode className="carousel-icon" />,
-    imageSrc: '/images/message.png' // replace with your own image if desired
+    imageSrc: './images/message.png' // replace with your own image if desired
   }
 ];
 

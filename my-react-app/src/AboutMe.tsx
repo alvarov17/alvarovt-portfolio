@@ -68,9 +68,7 @@ function AboutMe() {
               onHoverScale={1}
               saturation={100}
               brightness={100}>
-            <div>
-              <div>About</div>
-            </div>
+              <div className="button-text">About</div>
           </GlassCard>
           </button>
           
@@ -101,9 +99,7 @@ function AboutMe() {
               onHoverScale={1}
               saturation={100}
               brightness={100}>
-              <div>
-                <div>Projects</div>
-              </div>
+                <div className="button-text">Projects</div>
             </GlassCard>
           </button>
 
@@ -134,9 +130,7 @@ function AboutMe() {
               onHoverScale={1}
               saturation={100}
               brightness={100}>
-              <div>
-                <div>Contact</div>
-              </div>
+                <div className="button-text">Contact</div>
             </GlassCard>
           </button>
         </nav>
@@ -220,7 +214,7 @@ function AboutMe() {
             brightness={100}>
           <div className="profile-card">
               <div className="profile-image-container">
-                <img className="profile-image" src={"./public/images/portfolio_alv.jpeg"} />
+                <img className="profile-image" src={"./images/portfolio_alv.jpeg"} />
               </div>
               <div className="profile-info">
                 <div className="profile-name">Alvaro Ventura</div>
@@ -350,7 +344,7 @@ function AboutMe() {
             </div>
             <div className="tilted-cards-container">
               <TiltedCard
-                imageSrc="./public/images/loathe_band.jpeg"
+                imageSrc="./images/loathe_band.jpeg"
                 altText="Loathe - Band Photo"
                 captionText="Loathe"
                 containerHeight="300px"

@@ -5,6 +5,13 @@
   font-size: 45px;
 }
 
+@media screen and (max-width: 600px) {
+  .variable-proximity {
+    font-size: 18px;
+  }
+  
+}
+
 .sr-only {
   position: absolute;
   width: 1px;

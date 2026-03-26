@@ -1,7 +1,7 @@
 import { GlassCard } from "react-glass-ui";
 import Prism from "./components/Prism";
 import "./Projects.css";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import SplitText from "./components/SplitText";
 import VariableProximity from "./components/VariableProximity";
@@ -24,6 +24,22 @@ const techLogos = [
 ];
 
 function Projects() {
+
+    const getCarouselBaseWidth = (w: number) => {
+        if (w >= 1200) return 1000;
+        if (w >= 900) return 800;
+        if (w >= 640) return 600;
+        if (w >= 480) return 420;
+        return 320;
+      };
+      const [carouselBaseWidth, setCarouselBaseWidth] = useState<number>(() =>
+        typeof window !== "undefined" ? getCarouselBaseWidth(window.innerWidth) : 1000
+      );
+      useEffect(() => {
+        const onResize = () => setCarouselBaseWidth(getCarouselBaseWidth(window.innerWidth));
+        window.addEventListener("resize", onResize);
+        return () => window.removeEventListener("resize", onResize);
+      }, []);
 
   const handleAnimationComplete = () => {
     console.log('All letters have animated!');
@@ -82,10 +98,8 @@ function Projects() {
               onHoverScale={1}
               saturation={100}
               brightness={100}>
-            <div>
-              <div>About</div>
-            </div>
-          </GlassCard>
+              <div className='button-text'>About</div>
+            </GlassCard>
           </button>
           
           <button onClick={() => navProjects()}>
@@ -115,8 +129,8 @@ function Projects() {
               onHoverScale={1}
               saturation={100}
               brightness={100}>
-              <div>
-                <div>Projects</div>
+              <div className="button-text">
+                Projects
               </div>
             </GlassCard>
           </button>
@@ -148,9 +162,7 @@ function Projects() {
               onHoverScale={1}
               saturation={100}
               brightness={100}>
-              <div>
-                <div>Contact</div>
-              </div>
+              <div className="button-text">Contact</div>
             </GlassCard>
           </button>
         </nav>
@@ -183,8 +195,7 @@ function Projects() {
             hoverStrength={2}
             inertia={0.05}
             bloom={0.9}
-            timeScale={0.5}
-          />
+            timeScale={0.5}/>
         </div>
       </div>
 
@@ -208,7 +219,7 @@ function Projects() {
         <GlassCard
             blur={4}
             width={1000}
-            height={250}
+            height={375}
             padding="0px"
             distortion={80}
             flexibility={2}
@@ -235,7 +246,7 @@ function Projects() {
             <div ref={containerRef} style={{position: 'relative', paddingTop: '40px'}}>
               <div className="prose-width">
                 <VariableProximity
-                  style={{fontSize: '30px',}}
+                  // style={{fontSize: '30px',}}
                   label={'This is a collection of what I have done so far during my time learning and applying the knowledge I\'ve gained! I will continue to update this page with more experiences and projects! If you have any question, feel free to contact me!'}
                   className={'variable-proximity'}
                   fromFontVariationSettings="'wght' 400, 'opsz' 30"
@@ -275,7 +286,7 @@ function Projects() {
         alignItems: 'center',       
         width: '100%'}}>
         <Carousel
-          baseWidth={1000}
+          baseWidth={carouselBaseWidth}
           autoplay={true}
           autoplayDelay={3000}
           pauseOnHover={true}
@@ -314,7 +325,7 @@ function Projects() {
               <div className="profile-image-container">
                 <a href="https://github.com/alvarov17" target="_blank" rel="noopener noreferrer">
                   <button>
-                    <img className="profile-image" src={"./public/images/github.png"} />
+                    <img className="profile-image" src={"./images/github.png"} />
                   </button>
                 </a>
               </div>
@@ -354,7 +365,7 @@ function Projects() {
               <div className="profile-image-container">
                 <a href="https://devpost.com/alvaroventura17?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav" target="_blank" rel="noopener noreferrer">
                   <button>
-                    <img className="profile-image" src={"./public/images/devpost.jpg"} />
+                    <img className="profile-image" src={"./images/devpost.jpg"} />
                   </button>
                 </a>
               </div>
@@ -395,7 +406,7 @@ function Projects() {
               <div className="profile-image-container">
                 <a href="https://www.linkedin.com/in/alvaro-ventura-b34031253/" target="_blank" rel="noopener noreferrer">
                   <button>
-                    <img className="profile-image" src={"./public/images/linkedin.png"} />
+                    <img className="profile-image" src={"./images/linkedin.png"} />
                   </button>
                 </a>
               </div>
@@ -406,8 +417,7 @@ function Projects() {
           </div>
         </GlassCard>
       </section>
-
-
+      
     </div>
   );
 }

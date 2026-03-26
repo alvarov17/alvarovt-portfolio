@@ -89,9 +89,7 @@ body,
   display: block;
 }
 
-
-
-.enjoy-section {
+.profile-section {
   padding-top: 15px;
   padding-bottom: 15px;
   display: flex;
@@ -104,14 +102,6 @@ body,
 }
 
 
-/* stack vertically on narrow viewports */
-@media (max-width: 640px) {
-  .tilted-cards-container {
-    flex-direction: column;
-    gap: 16px;
-  }
-}
-
 .nav-buttons {
   width: 100%;
   box-sizing: border-box;
@@ -120,6 +110,16 @@ body,
   justify-content: center; /* center the nav horizontally in the section */
   align-items: center;
   z-index: 2;
+}
+
+.button-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* make the <nav> hold the GlassCard components in a row */
@@ -132,28 +132,29 @@ body,
   flex-wrap: wrap; /* wrap on narrow screens */
 }
 
-/* ensure each GlassCard keeps its size and doesn't stretch */
 .nav-buttons nav > * {
-  flex: 0 0 auto;
+  min-width: 0;            /* critical to allow shrinking inside flex containers */
+  flex: 1 1 220px;        /* grow/shrink with a sensible basis; adjust as needed */
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  height: 100%;
-  transition: filter 180ms ease, transform 180ms ease;
-  will-change: filter, transform;
+  overflow: hidden;       /* prevent inner scrollbars */
+  white-space: normal;
 }
 
-/* if the GlassCard wraps children inside extra divs, center those too */
-.nav-buttons nav > * > div,
-.nav-buttons nav > * > div > div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  width: 100%;
-  height: 100%;
+
+@media (max-width: 480px) {
+  .nav-buttons nav,
+  .nav-buttons > nav {
+    flex-direction: row !important;
+    gap: 10px;
+  }
+  .nav-buttons nav > div {
+    height: auto;
+  }
 }
+
 
 .nav-buttons nav button {
   background: transparent;
@@ -179,12 +180,3 @@ body,
   outline: 2px solid rgba(255,255,255,0.12);
   outline-offset: 4px;
 }
-
-/* optional: stack vertically on very small screens */
-@media (max-width: 480px) {
-  .nav-buttons nav {
-    flex-direction: column;
-    gap: 10px;
-  }
-}
-
